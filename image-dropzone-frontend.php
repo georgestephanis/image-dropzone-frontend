@@ -68,8 +68,11 @@ class Image_Dropzone_Frontend {
 			foreach ( $image_id_arr as $image_id ) {
 				$post = get_default_post_to_edit();
 
+				$meta = wp_get_attachment_metadata( $image_id );
+				$image_html = get_image_send_to_editor( $image_id, $meta['image_meta']['caption'], '', 'none', wp_get_attachment_url( $image_id ), '', 'full' );
+
 				$post->post_title    = basename( get_attached_file( $image_id ) );
-				$post->post_content  = wp_get_attachment_url( $image_id );
+				$post->post_content  = $image_html;
 				$post->post_category = array();
 
 				$post_id = wp_insert_post( $post );
