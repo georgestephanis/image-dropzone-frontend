@@ -1,0 +1,26 @@
+#image-dropzone-frontend-drop-zone .dragging,
+#image-dropzone-frontend-drop-zone .uploading {
+	margin-top: 200px;
+	display: none;
+}
+
+body.dragging #image-dropzone-frontend-drop-zone .dragging,
+body.uploading #image-dropzone-frontend-drop-zone .uploading {
+	display: block;
+}
+
+body.dragging #image-dropzone-frontend-drop-zone,
+body.uploading #image-dropzone-frontend-drop-zone {
+	background: rgba( 0, 86, 132, 0.9 );
+	border: 1px dashed #fff;
+	color: #fff;
+	display: block;
+	font-size: 30px;
+	position: fixed;
+		top: 10px;
+		left: 10px;
+		right: 10px;
+		bottom: 10px;
+	text-align: center;
+	z-index: 99999;
+}
